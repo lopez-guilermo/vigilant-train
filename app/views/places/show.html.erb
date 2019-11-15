@@ -81,7 +81,7 @@
         <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
       </div>
 
-     <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+      <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
         <div class="modal-body">
           <%= f.input :message %>
           <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
@@ -91,12 +91,7 @@
           <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
         </div>
       <% end %>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+
     </div>
   </div>
 </div>
