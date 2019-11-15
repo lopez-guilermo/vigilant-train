@@ -161,6 +161,9 @@ Now what we want to do is clean up the tags inside of the code we just copied. A
   </head>
   <body>
   <div id="map"></div>
+
+  <% if @place.latitude.present? && @place.longitude.present? %>
+
   <script>
 
     function initMap() {
@@ -184,6 +187,10 @@ Now what we want to do is clean up the tags inside of the code we just copied. A
   </script>
 
   <div id="map"></div>
+
+<% end %> 
+
+<br />
 
   <div class="float-right">
     <% if current_user && current_user == @place.user %>
