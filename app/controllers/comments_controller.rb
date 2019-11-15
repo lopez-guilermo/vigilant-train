@@ -1,4 +1,4 @@
-class CommentsController < 
+class CommentsController 
 	before_action :authenticate_user
 
 	def create
