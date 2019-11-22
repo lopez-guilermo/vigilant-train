@@ -1,5 +1,8 @@
 class Photo < ApplicationRecord
+
 	 mount_uploader :picture, PictureUploader
-	t.text :caption
-	t.integer :place_id
+	 belongs_to :user
+	 belongs_to :place
+	
+	
 end
