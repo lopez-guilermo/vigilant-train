@@ -138,7 +138,7 @@
 <%= simple_form_for @photo, url:'place_photos_path(@place)' do |f| %>
 <%= f.input :caption %>
  <%= f.input :picture %>
-<%= f.submit "Add a Photo", class 'btn btn-primary' %>
+
 <% end %>
 
 
@@ -151,6 +151,7 @@
   </blockquote>
     <%= image_tag photo.picture.to_s %>
   </div>
+  
   <% end %>
 </div>
 
