@@ -97,14 +97,8 @@
       </div>
     </div>
   </div>
- <% end
-
-
-    
-
-
- 
- <div class="col-10 offset-1">
+ <% end %>
+  <div class="col-10 offset-1">
 
 <h1 class="float-left">Comments</h1>
 <!-- Button trigger modal -->
@@ -123,7 +117,7 @@
  <div class="col-12 col-sm-6">
   <blockquote>
       <% if comment.humanized_rating.present? %>
-       <b><%= comment.humanized_rating %></b> -
+       <b><%= comment.humanized_rating %></b> 
       <% end %>
         <%= comment.message %>
       <small><%= comment.user.email %></small>
@@ -132,45 +126,42 @@
 </div>
 <% end %>
 
- <%= simple_form_for @photo, url: place_photos_path(@photos) do |f| %>
+
+
+ <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
  <div class="modal-body">
 <%= f.input :caption %>
  <%= f.input :picture %>
-</div>
+  </div>
 <div class="modal-footer">
-  
-   <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
  </div>
+ <% end %>
 
-         
-<% end %>
 <div class="col-10 offset-1">
-
 
 <h1 class="float-left">Photos</h1>
 <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
 
-<button type="button" class="btn btn-primary btn-lg float-left"
-data-toggle="modal" data-target="#myModal">
-  
 </button>
+
 <div class="clear"></div>
+
 <div class="row"></div>
+
 <br />
 <% @place.photos.each do |photo| %>
+</div>
 <div class="col-12 col-sm-6">
-<div>
-</div>
-</div>
-</div>
-  <blockquote>
+ <blockquote>
     <%= photo.caption %>
   </blockquote>
-    <%= image_tag photo.picture.to_s %>
+  <%= image_tag photo.picture.to_s %>
   </div>
-  </div>
+  
+
   <% end %>
-</div>
 
 
 
