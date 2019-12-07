@@ -12,6 +12,6 @@ def create
 	private
 
   def photo_params
-    params.require(:photo).permit(:picture)
+    params.require(:picture).permit(:photo)
   end
 end
